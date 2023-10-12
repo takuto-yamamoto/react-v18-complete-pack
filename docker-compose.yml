@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  react-v18:
+    build: .
+    image: react-v18-complete-pack:latest
+    container_name: react-v18-complete-pack
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8080:3000"
+    command: /bin/sh
+    stdin_open: true
+    tty: true
