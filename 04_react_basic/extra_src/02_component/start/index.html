@@ -10,7 +10,24 @@
     <script type="text/babel">
         const appEl = document.querySelector('#app');
         const root = ReactDOM.createRoot(appEl);
-        root.render(<h1>こんにちは</h1>);
+        // アロー関数でOK
+        // 複数のタグがある場合は()で囲む
+        const Example = () => (<div><h1>Hello React</h1></div>)
+        // function Example() {
+        //     return <h1>Hello React</h1>
+        // }
+        root.render(<Example />);
     </script>
 </body>
 </html>
+
+<!--
+# メモ
+
+- コンポーネントはいろいろな大きさで区切ることができる
+- コンポーネント化によってコードの再利用性・可読性・疎結合性が向上する
+- コンポーネントはパスカルケースで命名され、JSX形式でを返す
+  - JSXで呼び出す際に小文字だとHTMLタグだと誤認されるため
+- JSX形式でで呼び出すことで関数が実行される
+
+-->

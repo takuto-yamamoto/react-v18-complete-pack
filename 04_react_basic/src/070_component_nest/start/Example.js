@@ -1,11 +1,6 @@
-import "./Example.css";
+// defaultエクスポートは任意の名前(Childを使っていい)
+import Child from './component/Child';
 
-const Example = () => {
-  return (
-    <div className="component">
-      <h3>Hello Component</h3>
-    </div>
-  );
-};
+const Example = () => <Child />;
 
 export default Example;

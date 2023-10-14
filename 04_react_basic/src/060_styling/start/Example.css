@@ -1,0 +1,13 @@
+/* クラスセレクタでクラスを定義 */
+.component {
+    /* 
+    remはrootM(ルートエム)の略で
+    <html>タグ直下の文字サイズを1remとする単位
+    */
+    padding: 1rem;
+    color: red;
+    /*
+    1つの属性に対して、いくつかのプロパティをスペースで繋ぐ
+    */
+    border: 5px solid blue;
+}
