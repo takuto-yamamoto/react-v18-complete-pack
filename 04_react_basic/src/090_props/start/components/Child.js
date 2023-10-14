@@ -3,12 +3,18 @@
 文：変数宣言、for文、if文、switch文やセミコロンで区切るもの。
 */
 
-import "./Child.css";
+import './Child.css';
 
-const Child = () => {
+// 分割代入でOK
+// :で別名記載可能
+// 初期値を記載可能
+const Child = ({ color: c = 'green', fn, bool, obj }) => {
   return (
-    <div className="component">
+    <div className={`component ${c}`}>
       <h3>Hello Component</h3>
+      <h3>{fn('props')}</h3>
+      <h3>{bool ? 'true' : 'false'}</h3>
+      <h3>{obj.name + obj.age}</h3>
     </div>
   );
 };

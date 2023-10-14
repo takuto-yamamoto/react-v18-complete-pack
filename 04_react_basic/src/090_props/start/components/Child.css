@@ -3,3 +3,19 @@
   color: blue;
   border: 5px solid blue;
 }
+
+/*
+App-startの子孫要素にマッチ
+componentとredを持つクラス要素にマッチ
+*/
+.App-start .component.red {
+  padding: 1rem;
+  color: red;
+  border: 5px solid red;
+}
+
+.App-start .component.green {
+  padding: 1rem;
+  color: green;
+  border: 5px solid green;
+}
