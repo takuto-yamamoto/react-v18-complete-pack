@@ -3,9 +3,7 @@ import './Expression.css';
 const Expression = () => {
   const title = 'Expression';
   const array = ['item1', 'item2', 'item3'];
-  const hello = (arg) => {
-    `${arg} function`;
-  };
+  const hello = (arg) => `${arg} function`;
   const jsx = <h3>Hello JSX</h3>;
   const bool = true;
   // プレースホルダ内にJS式を格納可能
