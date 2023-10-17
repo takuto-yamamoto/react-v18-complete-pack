@@ -1,5 +1,4 @@
-
-const animals = ["Dog", "Cat", "Rat"];
+const animals = ['Dog', 'Cat', 'Rat'];
 
 const Example = () => {
   const animalList = [];
@@ -21,7 +20,11 @@ const Example = () => {
         {helloAnimals} */}
         {/* {animalList} */}
 
-        {animals.map((animal) => <li>Hello, {animal}</li>)}
+        {/* 繰り返し処理を行う子要素についてはkeyプロパティをつける */}
+        {/* 順序を持たないリストで順序が入れ替わっても、差分を最小限にできる */}
+        {animals.map((animal) => (
+          <li key={animal}>Hello, {animal}</li>
+        ))}
       </ul>
     </>
   );
