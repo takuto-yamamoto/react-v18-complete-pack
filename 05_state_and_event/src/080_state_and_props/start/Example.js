@@ -1,19 +1,26 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const Example = () => {
-  const [ toggle, setToggle ] = useState(true);
+  const [toggle, setToggle] = useState(true);
+  const [countA, setCountA] = useState(0);
+  const [countB, setCountB] = useState(0);
   const toggleComponent = () => {
-    setToggle(prev => !prev);
-  }
+    setToggle((prev) => !prev);
+  };
+  // stateをpropsで渡すことで複数のcomponentでの共有が可能
+  // コンポーネントが消滅する可能性がある場合は親コンポーネントででstateを定義する
   return (
     <>
-    <button onClick={toggleComponent}>toggle</button>
-    {toggle ? <Count key="A" title="A"/> : <Count key="B" title="B"/>}
+      <button onClick={toggleComponent}>toggle</button>
+      {toggle ? (
+        <Count count={countA} setCount={setCountA} key="A" title="A" />
+      ) : (
+        <Count count={countB} setCount={setCountB} key="B" title="B" />
+      )}
     </>
-  )
-}
-const Count = ({ title }) => {
-  const [count, setCount] = useState(0);
+  );
+};
+const Count = ({ title, count, setCount }) => {
   const countUp = () => {
     setCount((prevstate) => prevstate + 1);
   };
@@ -22,7 +29,9 @@ const Count = ({ title }) => {
   };
   return (
     <>
-      <h3>{title}: {count}</h3>
+      <h3>
+        {title}: {count}
+      </h3>
       <button onClick={countUp}>+</button>
       <button onClick={countDown}>-</button>
     </>
