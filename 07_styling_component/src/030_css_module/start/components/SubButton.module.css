@@ -10,6 +10,10 @@
     background: orange;
 }
 
+.btn:hover {
+    background-color: red;
+}
+
 .selected {
     background-color: pink;
 }
