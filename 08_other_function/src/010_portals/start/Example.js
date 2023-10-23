@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { createPortal } from "react-dom";
-import Modal from "./components/Modal";
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
+import Modal from './components/Modal';
 
 /* POINT createPortalの使い方
 第一引数: React の子要素としてレンダー可能なもの （要素、文字列、フラグメント、コンポーネントなど）
@@ -13,6 +13,13 @@ import Modal from "./components/Modal";
 それらの制限なく、子要素が親要素を「飛び出して」表示する必要があるときにcreatePortalを使うのが有効です。
 モーダル、ポップアップ、トーストは使用の代表例です。
 */
+
+// children: 子要素としてレンダーしたい要素
+// target: レンダー先の親DOMノード
+const ModelPortal = ({ children }) => {
+  const target = document.querySelector('.container.start');
+  return createPortal(children, target);
+};
 
 const Example = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -27,7 +34,11 @@ const Example = () => {
       >
         モーダルを表示する
       </button>
-      {modalOpen && <Modal handleCloseClick={() => setModalOpen(false)} />}
+      {modalOpen && (
+        <ModelPortal>
+          <Modal handleCloseClick={() => setModalOpen(false)} />
+        </ModelPortal>
+      )}
     </div>
   );
 };
