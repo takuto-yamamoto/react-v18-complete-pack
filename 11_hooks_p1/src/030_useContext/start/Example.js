@@ -1,8 +1,11 @@
-import Child from "./components/Child";
+import Child from './components/Child';
+
+import { createContext } from 'react';
+
+export const myContext = createContext('hello');
 
 const Example = () => {
-  const value = 'hello'
-  return <Child value={value}/>;
+  return <Child />;
 };
 
 export default Example;
