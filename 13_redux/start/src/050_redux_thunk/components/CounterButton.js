@@ -1,14 +1,17 @@
-import { useDispatch } from "react-redux";
-import { add, minus } from "../store/modules/counter"
+import { useDispatch } from 'react-redux';
+import { add, minus } from '../store/modules/counter';
 
-const CounterButton = ({calcType, step}) => {
-    
-    const dispatch = useDispatch();
-    const clickHandler = () => {
-        const action = calcType === '+' ? add(step) : minus(step);
-        dispatch(action);
-    }
+const CounterButton = ({ calcType, step, actionCreater }) => {
+  const dispatch = useDispatch();
+  const clickHandler = () => {
+    dispatch(actionCreater(step));
+  };
 
-    return <button onClick={clickHandler}>{calcType}{step}</button>
-}
+  return (
+    <button onClick={clickHandler}>
+      {calcType}
+      {step}
+    </button>
+  );
+};
 export default CounterButton;
